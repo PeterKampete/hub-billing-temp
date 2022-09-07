@@ -5,16 +5,13 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%
+  height: 100%;
+  margin-bottom: 30px;
+  
 `;
 
 export const Title = styled.span`
-  font-weight: var(--w-700);
   color: var(--color-secondary);
-  font-size: var(--s-15);
+  font-size: 11px;
 `;
-export const Steps = styled.span`
-  font-weight: var(--w-700);
-  color: var(--color-secondary);
-  font-size: var(--s-13);
-`;
+export const Steps = styled(Title)``;

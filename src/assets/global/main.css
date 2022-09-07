@@ -2,6 +2,7 @@
   /* base-colors */
 
   --color-primary: #286ef1;
+  --color-primary1: #D5E3FD;
   --color-secondary: #000000;
   --color-secondary1: #1a1a1a;
   --color-white: #ffffff;
@@ -13,7 +14,7 @@
 
   /* message */
   --color-success: #18bb4b;
-  --color-warning: #ffac14;
+  --color-warning: #FCF4E6;
 
   /* font-weight */
   --w-700: 700;

@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Steps, Title } from "./StepsContainer.styles";
 
-const StepsContainer = ({ steps, ...props }) => {
+const StepsContainer = ({ steps, title, ...props }) => {
   return (
     <Container {...props}>
       <div>
-        <Title>Getting Started</Title>
+        <Title>{title}</Title>
       </div>
       <div>
         <Steps>{steps}</Steps>

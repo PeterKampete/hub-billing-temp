@@ -8,14 +8,15 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  margin-bottom: 25px
 `;
 export const Title = styled.span`
-  font-weight: var(--w-700);
+  font-weight: bold;
   color: var(--color-secondary);
-  font-size: var(--s-18);
+  font-size: 15px;
 `;
 export const Caption = styled.span`
   font-weight: var(--w-400);
-  font-size: var(--s-15);
+  font-size: 12px;
   color: #555555;
 `;

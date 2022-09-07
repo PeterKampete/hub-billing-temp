@@ -2,10 +2,10 @@ import React from "react";
 import { Container, Text } from "./LinkDocs.styles";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-const LinkDocs = ({ title, renderIcon, color, ...props }) => {
+const LinkDocs = ({ title, renderIcon, color, fWeight, ...props }) => {
   return (
     <Container color={color} {...props}>
-      <Text>{title}</Text>
+      <Text fWeight={fWeight}>{title}</Text>
       {<FaExternalLinkAlt /> || renderIcon()}
     </Container>
   );

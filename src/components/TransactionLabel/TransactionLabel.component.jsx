@@ -1,11 +1,11 @@
 import React from "react";
-import { Container } from "./TransactionLabel.styles";
+import { Container, Span } from "./TransactionLabel.styles";
 
 const TransactionLabel = ({ label, value, bgColor, ...props }) => {
   return (
     <Container {...props} bgColor={bgColor}>
-      <span>{label}</span>
-      <span style={{ color: "var(--color-secondary1)", fontSize: '14px' }}>{value}</span>
+      <Span>{label}</Span>
+      <Span style={{ color: "#555555" }}>{value}</Span>
     </Container>
   );
 };

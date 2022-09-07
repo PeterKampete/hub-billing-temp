@@ -8,9 +8,9 @@ export const WrapperContainer = styled.div`
   justify-content: center
 `;
 export const Content = styled.div`
-  width: 55%;
-  height: 80%;
+  width: 48%;
+  height: 85%;
   margin-top: 10vh;
   display: grid;
-  grid-template-rows: 0.14fr 1fr
+  grid-template-rows: 0.15fr 1fr
 `;

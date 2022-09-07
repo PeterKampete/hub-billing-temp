@@ -13,4 +13,5 @@ export const Container = styled.button`
 export const Text = styled.span`
   font-size: 10px;
   margin-right: 4px;
+  font-weight: ${({ fWeight }) => (fWeight ? `${fWeight}` : '800')};
 `;
