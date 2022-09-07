@@ -1,14 +1,21 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeIn = keyframes`
+from { opacity: 0; }
+    to   { opacity: 1; }
+`;
 
 export const Container = styled.div`
   width: 100%;
   background: var(--color-primary1);
   padding: 6px;
   display: grid;
-  grid-template-columns: 0.09fr 1fr 0.1fr;
+  grid-template-columns: 0.09fr 1fr 0.09fr;
   align-items: center;
   border-radius: 6px;
-  margin: 16px 0px;
+  margin: 14px 0px;
+  position: relative;
+  animation: ${fadeIn} 0.7s ease-in;
 `;
 
 export const Title = styled.span`

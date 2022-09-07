@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setShowModal(true);
-    }, 3000);
+    }, 2000);
   }, []);
 
   return (

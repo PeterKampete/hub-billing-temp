@@ -5,10 +5,10 @@ export const Container = styled.div`
   background: var(--color-white);
   height: 100%;
   border-radius: 6px;
-  padding: 8px 20px 20px;
+  padding: 8px 20px 0px;
   display: grid;
   grid-template-rows: 0.16fr 1fr;
-  row-gap: 5px
+  row-gap: 5px;
 `;
 export const Content = styled.div`
   width: 100%;
@@ -17,7 +17,7 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   background: var(--color-bgMain1);
-  padding-bottom: 20px
+  padding: 22px 0px
 `;
 
 export const Title = styled.p`
