@@ -1,0 +1,27 @@
+:root {
+  /* base-colors */
+
+  --color-primary: #286ef1;
+  --color-secondary: #000000;
+  --color-secondary1: #1a1a1a;
+  --color-white: #ffffff;
+
+  /* background */
+  --color-bgWordmark: #eaf1fe;
+  --color-bgMain: #f2f2f2;
+  --color-bgMain1: #F9F9F9;
+
+  /* message */
+  --color-success: #18bb4b;
+  --color-warning: #ffac14;
+
+  /* font-weight */
+  --w-700: 700;
+  --w-400: 400;
+
+  /* font-size */
+  --s-13: 13px;
+  --s-15: 18px;
+  --s-18: 18px;
+  --s-24: 24px;
+}
