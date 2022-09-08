@@ -1,12 +1,12 @@
 import React from "react";
 import { RiErrorWarningFill } from "react-icons/ri";
-import { Container, Span } from "./Note.styles";
+import { Container, Title } from "./Note.styles";
 
-const Note = ({ title, renderIcon, ...props }) => {
+const Note = ({ title, renderIcon, width, ...props }) => {
   return (
-    <Container {...props}>
+    <Container width={width} {...props}>
       {<RiErrorWarningFill color="#FFAC14" /> || renderIcon()}
-      <Span>{title}</Span>
+      <Title>{title}</Title>
     </Container>
   );
 };

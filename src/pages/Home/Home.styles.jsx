@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
+  height: 100%;
   background: var(--color-white);
   height: 100%;
   border-radius: 6px;
   padding: 8px 20px 0px;
   display: grid;
   grid-template-rows: 0.16fr 1fr;
-  row-gap: 5px;
+  row-gap: 10px;
 `;
 export const Content = styled.div`
   width: 100%;

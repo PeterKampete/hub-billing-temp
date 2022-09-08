@@ -5,7 +5,7 @@ import { Container, Title, Caption } from "./PageHeader.styles";
 
 const PageHeader = ({ title, caption }) => {
   return (
-    <>
+    <div>
       <Container>
         <div>
           <Title>{title}</Title>
@@ -16,7 +16,7 @@ const PageHeader = ({ title, caption }) => {
         </div>
       </Container>
       <div style={{ backgroundColor: "#E6E6E6", height: "0.5px" }} />
-    </>
+    </div>
   );
 };
 

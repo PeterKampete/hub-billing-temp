@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  margin-bottom: 21px
+  margin-bottom: 20px
 `;
 export const Title = styled.span`
   font-weight: bold;

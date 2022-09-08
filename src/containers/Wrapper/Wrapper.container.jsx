@@ -7,11 +7,14 @@ const Wrapper = ({ children }) => {
     <WrapperContainer>
       <Navbar />
       <Content>
-        <PageHeader
-          title="Client Billing "
-          caption="– A full payment solution for your business, free with {company}"
-        />
+        <>
+          <PageHeader
+            title="Client Billing "
+            caption="– A full payment solution for your business, free with {company}"
+          />
         {children}
+        </>
+        
       </Content>
     </WrapperContainer>
   );
