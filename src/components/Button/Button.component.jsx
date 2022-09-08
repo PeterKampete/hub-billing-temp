@@ -7,39 +7,20 @@ export const PrimaryBtn = ({
   margin,
   padding,
   width,
+  renderIcon,
   onClick,
   ...props
 }) => {
   return (
     <Container
       onClick={onClick}
-      {...props}
       width={width}
       margin={margin}
       padding={padding}
-    >
-      {title}
-    </Container>
-  );
-};
-
-export const SecondaryBtn = ({
-  title,
-  bgColor,
-  margin,
-  padding,
-  width,
-  onClick,
-  ...props
-}) => {
-  return (
-    <Container
-      onClick={onClick}
+      bgColor={bgColor}
       {...props}
-      width={width}
-      margin={margin}
-      padding={padding}
     >
+      {renderIcon && renderIcon()}
       {title}
     </Container>
   );

@@ -12,9 +12,8 @@ const Wrapper = ({ children }) => {
             title="Client Billing "
             caption="– A full payment solution for your business, free with {company}"
           />
-        {children}
+          {children}
         </>
-        
       </Content>
     </WrapperContainer>
   );

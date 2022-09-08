@@ -7,3 +7,4 @@ export { default as TransactionLabel } from "./TransactionLabel/TransactionLabel
 export { default as Note } from "./Note/Note.component";
 export { default as Modal } from "./Modal/Modal.component";
 export { default as Dropdown } from "./Dropdown/Dropdown.component";
+export { default as CheckboxText } from "./CheckboxText/CheckboxText.component";

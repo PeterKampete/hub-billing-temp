@@ -34,7 +34,7 @@ const Home = () => {
             or create a new one.
           </Caption>
           <TransactionLabel label="Transaction Fee" value="5%" />
-          <PrimaryBtn title="Get Started" width="21" margin="12" />
+          <PrimaryBtn title="Get Started" width="20" margin="12" />
           <LinkDocs
             title="Find out more about Client Billing"
             color="var(--color-primary)"

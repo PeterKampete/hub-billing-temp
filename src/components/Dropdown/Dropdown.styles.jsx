@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 40%;
-  margin: 0 auto;
+  width: 16%;
+  position: absolute;
+  top: 420px;
+  z-index: 1000
 `;
 
 export const DropDownHeader = styled.div`
@@ -44,5 +46,9 @@ export const ListItem = styled.div`
   padding: 15px 10px;
   display: flex;
   align-items: center;
-  font-size: 10px
+  font-size: 10px;
+  :hover {
+  background-color: var(--color-bgMain1);
+  transition: 0.2s ease-in
+  }
 `;

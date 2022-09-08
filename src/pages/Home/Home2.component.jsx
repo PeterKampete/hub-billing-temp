@@ -1,7 +1,8 @@
-import React from "react";
-import { Dropdown, Note } from "../../components";
+import React, { useState } from "react";
+import { CheckboxText, Dropdown, Note } from "../../components";
+import { PrimaryBtn } from "../../components/Button/Button.component";
 import { Wrapper } from "../../containers";
-import { Title, Caption } from "./Home.styles";
+import { Title, Caption, StyledBtn, StyledBtnChk } from "./Home.styles";
 import HomeWrapper from "./HomeWrapper";
 
 const Home2 = () => {
@@ -13,20 +14,34 @@ const Home2 = () => {
     "XAF - Francs",
   ];
 
+  const [check, setCheck] = useState(false);
+
   return (
     <Wrapper>
-      <HomeWrapper>
-        <Title>Choose Billing Currency</Title>
-        <Caption>
-          Select the currency you want to use to bill your clients.
-        </Caption>
-        <Note
-          title="Note: Billing currency cannot be changed in the future.
+      <div style={{ marginBottom: "0px" }}>
+        <HomeWrapper style={{ paddingBottom: "20px" }}>
+          <Title>Choose Billing Currency</Title>
+          <Caption>
+            Select the currency you want to use to bill your clients.
+          </Caption>
+          <Note
+            title="Note: Billing currency cannot be changed in the future.
          Please make sure you select the correct currency."
-          width="62"
-        />
-        <Dropdown options={options} />
-      </HomeWrapper>
+            width="60"
+          />
+          <Dropdown options={options} />
+          <CheckboxText
+            onClick={() => setCheck(!check)}
+            text="I am aware that I cannot change currency later"
+            checked={check}
+          />
+          {check ? (
+            <StyledBtnChk title="Finish Setup" width="20" />
+          ) : (
+            <StyledBtn title="Finish Setup" width="20" />
+          )}
+        </HomeWrapper>
+      </div>
     </Wrapper>
   );
 };

@@ -8,10 +8,10 @@ export const Container = styled.button`
   margin: ${({ margin }) => (margin ? `${margin}px` : `${10}px`)};
   padding: ${({ padding }) => (padding ? `${padding}px` : `${10}px`)};
   border: none;
-  color: #ffffff;
+  color: ${({ color }) => (color ? `${color}` : "#ffffff")};
   font-size: 11px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   cursor: pointer;
 `;
