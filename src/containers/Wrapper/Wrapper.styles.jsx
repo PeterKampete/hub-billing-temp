@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const fadeIn = keyframes`
 from { opacity: 0; }
@@ -19,5 +19,4 @@ export const Content = styled.div`
   display: grid;
   grid-template-rows: 0.15fr 1fr;
   animation: ${fadeIn} 0.5s linear;
-
 `;

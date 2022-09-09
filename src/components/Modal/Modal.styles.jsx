@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const fadeIn = keyframes`
 from { opacity: 0; }
@@ -32,10 +32,10 @@ export const Texts = styled.div`
   justify-content: center;
 `;
 export const Icon = styled.div`
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: var(--color-primary);
+  background-color: ${({ bgColor }) => bgColor};
+  height: ${({ height }) => (typeof height === 'string' ? height : `${height}%`)};
+  width: ${({ width }) => (typeof width === 'string' ? width : `${width}%`)};
+  border-radius: ${({ borderRadius }) => (typeof borderRadius === 'string' ? borderRadius : `${borderRadius}px`)};
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,14 +1,63 @@
-import React from "react";
-import { RiErrorWarningFill } from "react-icons/ri";
-import { Container, Title } from "./Note.styles";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Note = ({ title, renderIcon, padding, width, margin, ...props }) => {
-  return (
-    <Container padding={padding} margin={margin} width={width} {...props}>
-      {<RiErrorWarningFill color="#FFAC14" /> || renderIcon()}
-      <Title>{title}</Title>
-    </Container>
-  );
+import { RiErrorWarningFill } from 'react-icons/ri';
+
+import { Container, Title } from './Note.styles';
+
+const Note = ({
+  title,
+  renderIcon,
+  padding,
+  width,
+  bgColor,
+  margin,
+  borderRadius,
+  iconAfter,
+  children,
+  ...props
+}) => (
+  <Container
+    padding={padding}
+    margin={margin}
+    width={width}
+    borderRadius={borderRadius}
+    bgColor={bgColor}
+    {...props}
+  >
+    {renderIcon && !iconAfter ? renderIcon() : null}
+    <Title>{title}</Title>
+    {renderIcon && iconAfter ? renderIcon() : null}
+    {children}
+  </Container>
+);
+
+Note.defaultProps = {
+  title: '',
+  fontSize: '11px',
+  color: '#555555',
+  bgColor: 'var(--color-warning)',
+  renderIcon: () => <RiErrorWarningFill color="#FFAC14" />,
+  iconAfter: false,
+  children: null,
+  width: '',
+  padding: '12px',
+  margin: '26px',
+  borderRadius: 3,
+};
+
+Note.propTypes = {
+  title: PropTypes.string,
+  color: PropTypes.string,
+  bgColor: PropTypes.string,
+  fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  iconAfter: PropTypes.bool,
+  renderIcon: PropTypes.func,
+  children: PropTypes.node,
+  padding: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  margin: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  borderRadius: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default Note;

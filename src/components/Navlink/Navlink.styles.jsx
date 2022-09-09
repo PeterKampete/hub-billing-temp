@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.button`
   display: flex;
@@ -9,8 +9,8 @@ export const Container = styled.button`
   margin: 0px 5px
 `;
 export const Title = styled.h6`
-  color: #555555;
+  color: ${({ color }) => color};
+  font-size: ${({ fontSize }) => (typeof fontSize === 'string' ? fontSize : `${fontSize}%`)};
   margin: 0px;
   margin-left: 5px;
-  font-size: 11px;
 `;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.button`
   width: 100%;
@@ -13,5 +13,5 @@ export const Container = styled.button`
 export const Text = styled.span`
   font-size: 10px;
   margin-right: 4px;
-  font-weight: ${({ fWeight }) => (fWeight ? `${fWeight}` : '800')};
+  font-weight: 800;
 `;

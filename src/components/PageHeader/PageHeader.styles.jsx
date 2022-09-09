@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   &p {
@@ -8,7 +8,11 @@ export const Container = styled.div`
   justify-content: space-between;
   width: 100%;
   align-items: center;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+`;
+export const Line = styled.div`
+  background-color: #e6e6e6;
+  height: 0.5px;
 `;
 export const Title = styled.span`
   font-weight: bold;

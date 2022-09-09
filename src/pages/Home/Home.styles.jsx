@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Button } from "../../components";
+import styled from 'styled-components';
+import { Button } from '../../components';
 
 export const Container = styled.div`
   width: 100%;
@@ -18,8 +18,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${({ bgColor }) =>
-    bgColor ? `${bgColor}` : "var(--color-bgMain1)"};
+  background: ${({ bgColor }) => bgColor};
   padding: 22px 0px;
 `;
 
@@ -61,9 +60,9 @@ export const BackBtn = styled(Button)`
 `;
 export const ConfigBtn = styled(Button)`
   align-self: flex-start;
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   color: #000000;
-  font-weight: bold
+  font-weight: bold;
 `;
 export const LinksContainer = styled.div`
   display: flex;

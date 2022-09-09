@@ -1,20 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: var(--color-white);
-  width: 40%;
+  width: ${({ width }) => (width ? `${width}%` : `${100}%`)};
+  border-radius: ${({ borderRadius }) => (typeof borderRadius === 'string' ? borderRadius : `${borderRadius}px`)};
   margin: 20px 0px;
   padding: 14px 20px 14px;
-  border-radius: 5px;
-  background: ${({ bgColor }) => (bgColor ? `${bgColor}` : "white")}};
+  background-color: ${({ bgColor }) => bgColor};
   &p {
     margin: 0px;
   }
 `;
 
 export const Span = styled.span`
-  font-size: 12px
-`
+  font-size: ${({ fontSize }) => (typeof fontSize === 'string' ? fontSize : `${fontSize}%`)};
+`;

@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const rotation = keyframes`
   0% {
@@ -9,13 +9,20 @@ const rotation = keyframes`
   }
   `;
 
-export const Container = styled.div`
-  width: ${({ size }) => (size ? `${size}px` : "30px")};
-  height: ${({ size }) => (size ? `${size}px` : "30px")};
-  border: 5px solid #cccccc;
+export const LoaderContainer = styled.div`
+  height: ${({ size }) => (typeof size === 'string' ? size : `${size}%`)};
+  width: ${({ size }) => (typeof size === 'string' ? size : `${size}%`)};
+  border: 5px solid ${({ fill }) => fill};
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;
   box-sizing: border-box;
   animation: ${rotation} 1s linear infinite;
+`;
+export const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
