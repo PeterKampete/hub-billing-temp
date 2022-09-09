@@ -1,15 +1,11 @@
-import React, { useState } from "react";
-import { StepsContainer } from "../../components";
+import React from "react";
 import { Container, Content } from "./Home.styles";
 
-const HomeWrapper = ({ children, ...props }) => {
-  const [steps, setSteps] = useState(0);
+const HomeWrapper = ({ children, heading, bgColor, ...props }) => {
   return (
     <Container {...props}>
-      <div>
-        <StepsContainer title="Getting Started" steps={steps} />
-      </div>
-      <Content>{children}</Content>
+      <div>{heading && heading()}</div>
+      <Content bgColor={bgColor}>{children}</Content>
     </Container>
   );
 };

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 16%;
+  width: 17%;
   position: absolute;
-  top: 420px;
-  z-index: 1000
+  top: 440px;
+  z-index: 1000;
 `;
 
 export const DropDownHeader = styled.div`
@@ -14,7 +14,7 @@ export const DropDownHeader = styled.div`
   border: 1px solid #e6e6e6;
   width: ${({ width }) => (width ? `${width}%` : `${100}%`)};
   margin-bottom: 1px;
-  padding: 14px;
+  padding: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,7 +48,7 @@ export const ListItem = styled.div`
   align-items: center;
   font-size: 10px;
   :hover {
-  background-color: var(--color-bgMain1);
-  transition: 0.2s ease-in
+    background-color: var(--color-bgMain1);
+    transition: 0.2s ease-in;
   }
 `;

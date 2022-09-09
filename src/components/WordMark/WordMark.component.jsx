@@ -1,5 +1,5 @@
 import React from "react";
-import { WordMarkText } from "../../assets/svg/WordMarkText";
+import { WordMarkText } from "../../assets/svg/SvgIcons";
 import { Container } from "./WordMark.styles";
 
 const WordMark = () => {

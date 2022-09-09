@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { PrimaryBtn } from "../../components/Button/Button.component";
+import { Button } from "../../components";
 
 export const Container = styled.div`
   width: 100%;
@@ -18,7 +18,8 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--color-bgMain1);
+  background: ${({ bgColor }) =>
+    bgColor ? `${bgColor}` : "var(--color-bgMain1)"};
   padding: 22px 0px;
 `;
 
@@ -29,20 +30,47 @@ export const Title = styled.p`
   text-align: center;
   margin-top: 25px;
 `;
+export const StyledTitle = styled(Title)`
+  font-weight: var(--w-700);
+  color: var(--color-secondary);
+  font-size: var(--s-15);
+  text-align: center;
+`;
 export const Caption = styled.h6`
   color: #555555;
   text-align: center;
   line-height: 1.1em;
   margin: 0px;
 `;
-export const StyledBtn = styled(PrimaryBtn)`
+export const StyledBtn = styled(Button)`
   position: relative;
   top: 85px;
   background-color: #f5f5f5;
   color: #6b6b6b;
   border: 1px solid rgba(0, 0, 0, 0.1);
 `;
-export const StyledBtnChk = styled(PrimaryBtn)`
+export const StyledBtnChk = styled(Button)`
   position: relative;
-  top: 85px;
+  top: 75px;
+`;
+export const BackBtn = styled(Button)`
+  align-self: flex-start;
+  background-color: transparent;
+  color: #555555;
+  margin-left: 8px;
+`;
+export const ConfigBtn = styled(Button)`
+  align-self: flex-start;
+  background-color: #E6E6E6;
+  color: #000000;
+  font-weight: bold
+`;
+export const LinksContainer = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  position: relative;
+  bottom: 14px;
+  margin: 4px 0px 10px 0px;
+  justify-content: space-between;
 `;

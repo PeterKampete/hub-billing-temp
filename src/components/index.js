@@ -1,5 +1,6 @@
 export { default as LinkDocs } from "./LinkDocs/LinkDocs.component";
 export { default as Navbar } from "./Navbar/Navbar.component";
+export { default as Button } from "./Button/Button.component";
 export { default as PageHeader } from "./PageHeader/PageHeader.component";
 export { default as WordMark } from "./WordMark/WordMark.component";
 export { default as StepsContainer } from "./StepsContainer/StepsContainer.component";
@@ -8,3 +9,6 @@ export { default as Note } from "./Note/Note.component";
 export { default as Modal } from "./Modal/Modal.component";
 export { default as Dropdown } from "./Dropdown/Dropdown.component";
 export { default as CheckboxText } from "./CheckboxText/CheckboxText.component";
+export { default as Navlink } from "./Navlink/Navlink.component";
+export { default as Loader } from "./Loader/Loader.component";
+export { default as Connection } from "./Connection/Connection.component";

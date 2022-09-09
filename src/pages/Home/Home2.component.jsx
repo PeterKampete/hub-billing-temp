@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+import { BackIcon } from "../../assets/svg/SvgIcons";
 import { CheckboxText, Dropdown, Note } from "../../components";
-import { PrimaryBtn } from "../../components/Button/Button.component";
 import { Wrapper } from "../../containers";
-import { Title, Caption, StyledBtn, StyledBtnChk } from "./Home.styles";
+import {
+  StyledTitle,
+  Caption,
+  StyledBtn,
+  StyledBtnChk,
+  BackBtn,
+} from "./Home.styles";
 import HomeWrapper from "./HomeWrapper";
 
 const Home2 = () => {
@@ -18,9 +24,17 @@ const Home2 = () => {
 
   return (
     <Wrapper>
-      <div style={{ marginBottom: "0px" }}>
-        <HomeWrapper style={{ paddingBottom: "20px" }}>
-          <Title>Choose Billing Currency</Title>
+      <div>
+        <HomeWrapper style={{ paddingBottom: "20px", paddingTop: "0px" }}>
+          <BackBtn
+            title="Back"
+            padding="5"
+            margin="0"
+            width="10"
+            renderIcon={() => <BackIcon />}
+            
+          />
+          <StyledTitle>Choose Billing Currency</StyledTitle>
           <Caption>
             Select the currency you want to use to bill your clients.
           </Caption>
@@ -36,9 +50,9 @@ const Home2 = () => {
             checked={check}
           />
           {check ? (
-            <StyledBtnChk title="Finish Setup" width="20" />
+            <StyledBtnChk title="Finish Setup" width="16" />
           ) : (
-            <StyledBtn title="Finish Setup" width="20" />
+            <StyledBtn title="Finish Setup" width="16" />
           )}
         </HomeWrapper>
       </div>
