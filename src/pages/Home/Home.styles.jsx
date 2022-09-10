@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button, LinkDocs } from '../../components';
+import HomeWrapper from './HomeWrapper';
 
 export const Container = styled.div`
   background: var(--color-white);
@@ -124,19 +125,38 @@ export const BackBtn = styled(Button)`
   }
 `;
 export const ConfigBtn = styled(Button)`
-  align-self: flex-start;
   background-color: #e6e6e6;
   color: #000000;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  position: absolute;
+  right: 0px;
+  top: -220%;
+  width: 20%;
+  @media screen and (min-width: 50em){
+    position: static;
+    padding: 3px;
+    top: 0px;
+    width: 12%;
+  }
 `;
 export const LinksContainer = styled.div`
   display: flex;
-  align-items: center;
   background-color: transparent;
   position: relative;
+  top: -3%;
+  margin: 14% 0px;
+  z-index: 0;
+  @media screen and (min-width: 50em){
+  display: flex;
+  align-items: center;
   bottom: 14px;
+  top: -15px;
   margin: 4px 0px 10px 0px;
   justify-content: space-between;
+  }
 `;
 export const StartCon = styled.div`
   display: flex;
@@ -151,4 +171,14 @@ export const StyledLinkDocs = styled(LinkDocs)`
   font-size: 80%;
   font-weight: 800;
   }
+`;
+
+export const StyledHomeWrapper = styled(HomeWrapper)`
+  height: 60%;
+  margin-top: 10%;
+@media screen and (min-width: 50em){
+  padding: 70px;
+  height: 80%;
+  margin-top: 0px
+}
 `;

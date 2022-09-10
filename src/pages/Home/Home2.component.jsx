@@ -5,9 +5,8 @@ import {
 import { Navlink, Loader } from '../../components';
 import { Wrapper } from '../../containers';
 import {
-  Caption, LinksContainer, Title, ConfigBtn,
+  Caption, LinksContainer, Title, ConfigBtn, StyledHomeWrapper,
 } from './Home.styles';
-import HomeWrapper from './HomeWrapper';
 
 const Home2 = () => (
   <Wrapper>
@@ -19,9 +18,9 @@ const Home2 = () => (
           <Navlink title="Products & Services" renderIcon={() => <Services />} />
           <Navlink title="Invoices" renderIcon={() => <Invoices />} />
         </div>
-        <ConfigBtn title="Configure" width="12" padding="5" renderIcon={() => <Config />} />
+        <ConfigBtn title="Configure" width="12" padding="3px" renderIcon={() => <div style={{ marginRight: '5px' }}><Config /></div>} />
       </LinksContainer>
-      <HomeWrapper bgColor="white" style={{ padding: '70px', height: '80%' }}>
+      <StyledHomeWrapper bgColor="white">
         <Loader />
         <Title>Importing Stripe Configurations</Title>
         <Caption>
@@ -32,7 +31,7 @@ const Home2 = () => (
           {' '}
           take a few seconds…
         </Caption>
-      </HomeWrapper>
+      </StyledHomeWrapper>
     </div>
   </Wrapper>
 );
