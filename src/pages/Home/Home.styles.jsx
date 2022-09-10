@@ -12,8 +12,10 @@ export const Container = styled.div`
   position: absolute;
   top: 28%;
   width: 100%;
+  right: 1px;
   
   @media screen and (min-width: 50em){
+  top: 0%;
   width: 100%;
   height: 100%;
   background: var(--color-white);
@@ -23,6 +25,7 @@ export const Container = styled.div`
   row-gap: 10px;
   position: static;
   margin-top: 0px;
+  right: 0px;
   };
   }
 `;
@@ -34,6 +37,8 @@ export const Content = styled.div`
   align-items: center;
   background: ${({ bgColor }) => bgColor};
   padding: 22px 0px;
+  margin: ${({ margin }) => (typeof margin === 'string' ? margin : `${margin}%`)};
+  padding: ${({ padding }) => (typeof padding === 'string' ? padding : `${padding}%`)};
 `;
 
 export const Title = styled.p`
@@ -58,7 +63,7 @@ export const Caption = styled.span`
   color: #888888;
   text-align: center;
   margin: 0px;
-  font-size: '10px';
+  font-size: 11px;
   line-height: 1;
   @media screen and (min-width: 50em){
   font-size: 12px;
@@ -181,4 +186,12 @@ export const StyledHomeWrapper = styled(HomeWrapper)`
   height: 80%;
   margin-top: 0px
 }
+`;
+export const StyledBtnCon = styled(Button)`
+  width: 100%;
+  padding: 10px;
+  margin-top: 28px;
+  @media screen and (min-width: 50em){
+  
+  }
 `;

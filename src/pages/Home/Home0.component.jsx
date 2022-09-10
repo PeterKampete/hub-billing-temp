@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import {
-  Title, Caption, StartCon, StyledLinkDocs,
+  Title, Caption, StartCon, StyledLinkDocs, StyledBtnCon,
 } from './Home.styles';
 import { Wrapper } from '../../containers';
 import {
@@ -22,7 +22,7 @@ const Home0 = () => {
   // eslint-disable-next-line no-unused-vars
   const [showModal, setShowModal] = useState(false);
   // eslint-disable-next-line no-unused-vars
-  const [isSetup, setIsSetup] = useState(false);
+  const [isSetup, setIsSetup] = useState(true);
 
   const [steps, setSteps] = useState(1);
 
@@ -50,10 +50,10 @@ const Home0 = () => {
         caption="Pay 0% transaction fee and get added benefits by upgrading your account."
       />
       )}
-      <div style={{ marginTop: showModal ? '2px' : '28px' }}>
+      <div style={{ marginTop: showModal || isSetup ? '2px' : '28px' }}>
         <HomeWrapper
           heading={() => <StepsContainer title="Getting Started" steps={steps} />}
-          style={{ paddingBottom: showModal ? '6px' : '5px' }}
+          style={{ paddingBottom: showModal || isSetup ? '1%' : '5px' }}
         >
           <WordMark />
           <Title>Connect Stripe Account</Title>
@@ -63,7 +63,7 @@ const Home0 = () => {
               email="{email}"
               status="Connected"
               width="46"
-              padding="16"
+              padding={2}
               renderIcon={() => <FaCheckCircle color="#18BB4B" />}
             />
           ) : (
@@ -81,12 +81,14 @@ const Home0 = () => {
           )}
           <div>
             {isSetup ? (
-              <Button title="Continue" width="100" margin="12" />
+              <div>
+                <StyledBtnCon title="Continue" width={100} />
+              </div>
             ) : (
               <StartCon>
                 <Button
                   title="Get Started"
-                  width={70}
+                  width={55}
                   margin="12"
                   onClickFunc={() => setSteps(steps + 1)}
                 />
