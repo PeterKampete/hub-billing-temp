@@ -22,7 +22,7 @@ StepsContainer.defaultProps = {
   title: '',
   steps: [],
   color: 'var(--color-secondary)',
-  fontSize: '11px',
+  fontSize: 80,
 };
 StepsContainer.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types

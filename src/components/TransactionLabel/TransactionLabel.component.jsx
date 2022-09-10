@@ -14,7 +14,7 @@ const TransactionLabel = ({
   ...props
 }) => (
   <Container {...props} bgColor={bgColor} width={width} color={color} borderRadius={borderRadius}>
-    <Span>{label}</Span>
+    <Span fontSize={fontSize}>{label}</Span>
     <Span fontSize={fontSize}>{value}</Span>
   </Container>
 );
@@ -25,7 +25,7 @@ TransactionLabel.defaultProps = {
   bgColor: 'var(--color-white)',
   color: '#555555',
   width: '',
-  fontSize: '11px',
+  fontSize: 80,
   borderRadius: 3,
 };
 TransactionLabel.propTypes = {

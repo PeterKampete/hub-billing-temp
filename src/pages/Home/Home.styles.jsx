@@ -1,16 +1,26 @@
 import styled from 'styled-components';
-import { Button } from '../../components';
+import { Button, LinkDocs } from '../../components';
 
 export const Container = styled.div`
+  background: var(--color-white);
+  display: grid;
+  grid-template-rows: 0.1fr 1fr;
+  padding: 0px 5%;
+  border-radius: 8px;
+  margin-top: -13%;
+  
+  @media screen and (min-width: 50em){
   width: 100%;
   height: 100%;
   background: var(--color-white);
-  height: 100%;
-  border-radius: 6px;
-  padding: 8px 20px 0px;
+  padding: 0px 20px;
   display: grid;
   grid-template-rows: 0.16fr 1fr;
   row-gap: 10px;
+  position: static;
+  margin-top: 0px;
+  };
+  }
 `;
 export const Content = styled.div`
   width: 100%;
@@ -23,11 +33,14 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.p`
-  font-weight: var(--w-700);
   color: var(--color-secondary);
-  font-size: var(--s-15);
   text-align: center;
+  font-size: 100%;
+  margin-top: 20px;
+  @media screen and (min-width: 50em){
+  font-size: 22px;
   margin-top: 25px;
+  }
 `;
 export const StyledTitle = styled(Title)`
   font-weight: var(--w-700);
@@ -35,11 +48,15 @@ export const StyledTitle = styled(Title)`
   font-size: var(--s-15);
   text-align: center;
 `;
-export const Caption = styled.h6`
-  color: #555555;
+export const Caption = styled.h4`
+  color: #888888;
   text-align: center;
-  line-height: 1.1em;
   margin: 0px;
+  font-size: 70%;
+  line-height: 1;
+  @media screen and (min-width: 50em){
+  font-size: 12px;
+  }
 `;
 export const StyledBtn = styled(Button)`
   position: relative;
@@ -72,4 +89,18 @@ export const LinksContainer = styled.div`
   bottom: 14px;
   margin: 4px 0px 10px 0px;
   justify-content: space-between;
+`;
+export const StartCon = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px
+`;
+export const StyledLinkDocs = styled(LinkDocs)`
+  padding: 10px;
+  font-size: 60%;
+  @media screen and (min-width: 50em){
+  font-size: 80%;
+  font-weight: 800;
+  }
 `;

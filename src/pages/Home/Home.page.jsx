@@ -5,7 +5,7 @@ import Home2 from './Home2.component';
 
 const Home = () => {
   const stepsArr = [0, 1, 2];
-  const [steps, setSteps] = useState(2);
+  const [steps, setSteps] = useState(0);
   console.log(setSteps);
 
   if (steps === stepsArr[0]) {

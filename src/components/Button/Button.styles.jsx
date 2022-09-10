@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.button`
+  width: 40%;
   background-color: ${({ bgColor }) => bgColor};
   height: ${({ height }) => (typeof height === 'string' ? height : `${height}%`)};
-  width: ${({ width }) => (width ? `${width}%` : `${100}%`)};
   border-radius: ${({ borderRadius }) => (typeof borderRadius === 'string' ? borderRadius : `${borderRadius}px`)};
   margin: ${({ margin }) => (typeof margin === 'string' ? margin : `${margin}%`)};
-  padding: ${({ padding }) => (typeof padding === 'string' ? padding : `${padding}%`)};
   border: none;
+  padding: 5%;
+  font-size: 60%;
   color: ${({ color }) => color};
-  font-size: ${({ fontSize }) => (typeof fontSize === 'string' ? fontSize : `${fontSize}%`)};
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   cursor: pointer;
   box-shadow: var(--box-shadow);
   &:hover {
@@ -23,5 +23,10 @@ export const Container = styled.button`
     color: rgba(0, 0, 0, 0.1);
     cursor: not-allowed;
     border: none;
+  };
+  @media screen and (min-width: 50em) {
+  padding: ${({ padding }) => (typeof padding === 'string' ? padding : `${padding}%`)};
+  width: ${({ width }) => (width ? `${width}%` : `${100}%`)};
+  font-size: ${({ fontSize }) => (typeof fontSize === 'string' ? fontSize : `${fontSize}%`)};
   }
 `;
