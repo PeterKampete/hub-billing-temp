@@ -1,10 +1,14 @@
+/* eslint-disable react/no-unstable-nested-components */
+
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { BackIcon } from '../../assets/svg/SvgIcons';
-import { CheckboxText, Dropdown, Note } from '../../components';
+import {
+  CheckboxText, Dropdown, Note, StepsContainer,
+} from '../../components';
 import { Wrapper } from '../../containers';
 import {
-  StyledTitle, Caption, StyledBtn, StyledBtnChk, BackBtn,
+  StyledTitle, StyledCaption, StyledBtn, StyledBtnChk, BackBtn,
 } from './Home.styles';
 import HomeWrapper from './HomeWrapper';
 
@@ -13,7 +17,6 @@ const Home1 = ({ steps }) => {
     'USD - United States Dollars',
     'EUR - European Euro',
     'JPY - Japanese Yen',
-    'GBP - British Pound',
     'XAF - Francs',
   ];
 
@@ -22,17 +25,16 @@ const Home1 = ({ steps }) => {
   return (
     <Wrapper>
       <div>
-        <HomeWrapper style={{ paddingBottom: '20px' }}>
+        <HomeWrapper style={{ paddingBottom: '20px' }} heading={() => <StepsContainer title="Getting Started" steps="Step 2 of 2" />}>
           <BackBtn
             title="Back"
-            padding="5"
             margin="0"
-            width="10"
-            renderIcon={() => <BackIcon />}
+            width="11"
+            renderIcon={() => <div style={{ marginRight: '4px' }}><BackIcon /></div>}
             onClickFunc={() => steps - 1}
           />
           <StyledTitle>Choose Billing Currency</StyledTitle>
-          <Caption>Select the currency you want to use to bill your clients.</Caption>
+          <StyledCaption>Select the currency you want to use to bill your clients.</StyledCaption>
           <Note
             title="Note: Billing currency cannot be changed in the future.
          Please make sure you select the correct currency."

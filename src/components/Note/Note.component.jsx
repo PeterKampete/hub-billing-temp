@@ -34,14 +34,14 @@ const Note = ({
 
 Note.defaultProps = {
   title: '',
-  fontSize: '11px',
+  fontSize: '10px',
   color: '#555555',
   bgColor: 'var(--color-warning)',
-  renderIcon: () => <RiErrorWarningFill color="#FFAC14" />,
+  renderIcon: () => <RiErrorWarningFill fontSize="15px" color="#FFAC14" />,
   iconAfter: false,
   children: null,
   width: '',
-  padding: '12px',
+  padding: '10px 14px',
   margin: '26px',
   borderRadius: 3,
 };

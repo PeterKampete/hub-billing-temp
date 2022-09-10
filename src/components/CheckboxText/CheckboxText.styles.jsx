@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.button`
-  position: relative;
-  top: 60px;
+  cursor: pointer;
+  background-color: transparent;
   display: flex;
   align-items: center;
-  background-color: transparent;
   border: none;
-  cursor: pointer;
+  position: relative;
+  @media screen and (min-width: 50em){
+  top: 60px;
+  }
 `;
 export const CheckText = styled.h6`
   color: #555555;
