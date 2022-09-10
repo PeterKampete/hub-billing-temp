@@ -20,8 +20,8 @@ const WordMark = ({
 
 WordMark.defaultProps = {
   bgColor: 'var(--color-bgWordmark)',
-  width: '110px',
-  height: '110px',
+  width: '100px',
+  height: '100px',
   borderRadius: '50%',
 };
 

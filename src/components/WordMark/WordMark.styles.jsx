@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
   background-color: ${({ bgColor }) => bgColor};
   border-radius: ${({ borderRadius }) => (typeof borderRadius === 'string' ? borderRadius : `${borderRadius}px`)};
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;

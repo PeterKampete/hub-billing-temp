@@ -38,4 +38,9 @@ export const Caption = styled.span`
 export const Line = styled.div`
   background-color: #e6e6e6;
   height: 0.5px;
+  position: relative;
+  top: -25px;
+  @media screen and (min-width: 50em){
+  position: static;
+  }
 `;

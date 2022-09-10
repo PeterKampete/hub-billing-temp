@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import Button from '../Button/Button.component';
 
 const fadeIn = keyframes`
 from { opacity: 0; }
@@ -6,38 +7,79 @@ from { opacity: 0; }
 `;
 
 export const Container = styled.div`
-  width: 100%;
   background: var(--color-primary1);
-  padding: 6px;
-  display: grid;
-  grid-template-columns: 0.09fr 1fr 0.09fr;
-  align-items: center;
   border-radius: 6px;
-  margin: 14px 0px;
+  width: 98%;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
   position: relative;
+  left: -2px;
+  margin: 8px;
+  padding: 2px;
+  height: 10%;
+  top: -6%;
+  
+  @media screen and (min-width: 50em){
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  justify-content: space-between;
+  position: relative;
+  left: 0px;
+  margin: 8px 0px;
+  top: 0px;
   animation: ${fadeIn} 0.7s ease-in;
+  }
 `;
 
 export const Title = styled.span`
+  font-size: 12px;
   color: var(--color-secondary);
+  @media screen and (min-width: 50em){
   font-size: var(--s-13);
+  }
 `;
 export const Caption = styled.h6`
   color: #555555;
   margin: 0px;
+  font-size: 10px;
+  @media screen and (min-width: 50em){
+  font-size: 10px;
+  margin-top: 2px;
+  }
 `;
 export const Texts = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 4px;
+  @media screen and (min-width: 50em){
+  padding-left: 0px;
+  }
 `;
 export const Icon = styled.div`
   background-color: ${({ bgColor }) => bgColor};
-  height: ${({ height }) => (typeof height === 'string' ? height : `${height}%`)};
-  width: ${({ width }) => (typeof width === 'string' ? width : `${width}%`)};
-  border-radius: ${({ borderRadius }) => (typeof borderRadius === 'string' ? borderRadius : `${borderRadius}px`)};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 6px;
+  padding: 10px;
+  border-radius: ${({ borderRadius }) => (typeof borderRadius === 'string' ? borderRadius : `${borderRadius}px`)};
+  margin: 0px 7px;
+
+ @media screen and (min-width: 50em){
+  height: ${({ height }) => (typeof height === 'string' ? height : `${height}%`)};
+  width: ${({ width }) => (typeof width === 'string' ? width : `${width}%`)};
+  padding: ${({ padding }) => (typeof padding === 'string' ? padding : `${padding}%`)};
+  }
+`;
+
+export const ModalButton = styled(Button)`
+    padding: 12px;
+    width: 20%;
+    @media screen and (min-width: 50em){
+    padding: 10px;
+    width: 12%;
+  }
 `;

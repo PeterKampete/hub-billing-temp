@@ -25,8 +25,8 @@ export const BackIcon = () => (
 
 export const PopupIcon = () => (
   <svg
-    width="18"
-    height="18"
+    width="15"
+    height="15"
     viewBox="0 0 27 26"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

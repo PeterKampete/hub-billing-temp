@@ -5,8 +5,8 @@ import Home2 from './Home2.component';
 
 const Home = () => {
   const stepsArr = [0, 1, 2];
+  // eslint-disable-next-line no-unused-vars
   const [steps, setSteps] = useState(0);
-  console.log(setSteps);
 
   if (steps === stepsArr[0]) {
     return <Home0 />;

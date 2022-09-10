@@ -1,24 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Button } from '..';
 import { PopupIcon } from '../../assets/svg/SvgIcons';
 import {
-  Caption, Container, Title, Icon, Texts,
+  Caption, Container, Title, Icon, Texts, ModalButton,
 } from './Modal.styles';
 
 const Modal = ({
-  title, caption, width, height, borderRadius, bgColor, ...props
+  title, caption, width, height, borderRadius, padding, bgColor, ...props
 }) => (
   <Container {...props}>
-    <Icon width={width} height={height} borderRadius={borderRadius} bgColor={bgColor}>
-      <PopupIcon />
-    </Icon>
-    <Texts>
-      <Title>{title}</Title>
-      <Caption>{caption}</Caption>
-    </Texts>
-    <Button title="Upgrade" width="80" />
+    <div style={{ display: 'flex' }}>
+      <Icon
+        width={width}
+        height={height}
+        borderRadius={borderRadius}
+        padding={padding}
+        bgColor={bgColor}
+      >
+        <PopupIcon />
+      </Icon>
+      <Texts>
+        <Title>{title}</Title>
+        <Caption>{caption}</Caption>
+      </Texts>
+    </div>
+    <ModalButton title="Upgrade" width="50" />
   </Container>
 );
 

@@ -4,10 +4,13 @@ import { Button, LinkDocs } from '../../components';
 export const Container = styled.div`
   background: var(--color-white);
   display: grid;
-  grid-template-rows: 0.1fr 1fr;
+  grid-template-rows: 0.18fr 1fr;
   padding: 0px 5%;
   border-radius: 8px;
-  margin-top: -13%;
+  margin-top: 0%;
+  position: absolute;
+  top: 28%;
+  width: 100%;
   
   @media screen and (min-width: 50em){
   width: 100%;

@@ -22,7 +22,7 @@ const Home1 = ({ steps }) => {
   return (
     <Wrapper>
       <div>
-        <HomeWrapper style={{ paddingBottom: '20px', paddingTop: '0px' }}>
+        <HomeWrapper style={{ paddingBottom: '20px' }}>
           <BackBtn
             title="Back"
             padding="5"

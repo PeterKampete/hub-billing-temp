@@ -50,10 +50,10 @@ const Home0 = () => {
         caption="Pay 0% transaction fee and get added benefits by upgrading your account."
       />
       )}
-      <div style={{ marginTop: showModal ? '-2px' : '28px' }}>
+      <div style={{ marginTop: showModal ? '2px' : '28px' }}>
         <HomeWrapper
           heading={() => <StepsContainer title="Getting Started" steps={steps} />}
-          style={{ paddingBottom: '10px' }}
+          style={{ paddingBottom: showModal ? '6px' : '5px' }}
         >
           <WordMark />
           <Title>Connect Stripe Account</Title>
