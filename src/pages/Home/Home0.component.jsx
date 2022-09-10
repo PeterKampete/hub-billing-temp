@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unstable-nested-components */
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import {
   Title, Caption, StartCon, StyledLinkDocs, StyledBtnCon,
@@ -15,24 +15,24 @@ import {
 } from '../../components';
 
 import HomeWrapper from './HomeWrapper';
-import { CountContext } from '../../App';
+import { StepContext } from '../../App';
 
 const Home0 = () => {
-  const countContext = useContext(CountContext);
+  const stepContext = useContext(StepContext);
   // eslint-disable-next-line no-unused-vars
   const [showModal, setShowModal] = useState(false);
   // eslint-disable-next-line no-unused-vars
-  const [isSetup, setIsSetup] = useState(false);
-
-  // useEffect(() => {
-  //   if (!isSetup) {
-  //     setTimeout(() => {
-  //       setShowModal(true);
-  //     }, 2000);
-  //   }
-  // }, [isSetup]);
+  useEffect(() => {
+    if (stepContext.stepState.finished) {
+      setShowModal(false);
+    } else {
+      setTimeout(() => {
+        setShowModal(true);
+      }, 2000);
+    }
+  }, []);
   const handleNext = () => {
-    countContext.countDispatch('increment');
+    stepContext.stepDispatch('increment');
   };
 
   return (
@@ -44,14 +44,14 @@ const Home0 = () => {
         caption="Pay 0% transaction fee and get added benefits by upgrading your account."
       />
       )}
-      <div style={{ marginTop: showModal || isSetup ? '0px' : '28px' }}>
+      <div style={{ marginTop: showModal || stepContext.stepState.finished ? '0px' : '28px' }}>
         <HomeWrapper
           heading={() => <StepsContainer title="Getting Started" />}
-          style={{ paddingBottom: showModal || isSetup ? '1%' : '1.7%' }}
+          style={{ paddingBottom: showModal || stepContext.stepState.finished ? '1%' : '1.7%' }}
         >
           <WordMark />
           <Title>Connect Stripe Account</Title>
-          {isSetup ? (
+          {stepContext.stepState.finished ? (
             <Connection
               name="{name} Stripe Account"
               email="{email}"
@@ -74,7 +74,7 @@ const Home0 = () => {
             </>
           )}
           <div>
-            {isSetup ? (
+            {stepContext.stepState.finished ? (
               <div>
                 <StyledBtnCon title="Continue" width={100} />
               </div>

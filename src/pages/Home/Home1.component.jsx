@@ -10,7 +10,7 @@ import {
   StyledTitle, StyledCaption, StyledBtn, StyledBtnChk, BackBtn,
 } from './Home.styles';
 import HomeWrapper from './HomeWrapper';
-import { CountContext } from '../../App';
+import { StepContext } from '../../App';
 
 const Home1 = () => {
   const options = [
@@ -22,13 +22,17 @@ const Home1 = () => {
 
   const [check, setCheck] = useState(false);
 
-  const countContext = useContext(CountContext);
+  const stepContext = useContext(StepContext);
 
   const handleNext = () => {
-    countContext.countDispatch('increment');
+    stepContext.stepDispatch('increment');
+    setTimeout(() => {
+      stepContext.stepDispatch('finished');
+      console.log('dispatched finish');
+    }, 2000);
   };
   const handleBack = () => {
-    countContext.countDispatch('decrement');
+    stepContext.stepDispatch('decrement');
   };
 
   return (

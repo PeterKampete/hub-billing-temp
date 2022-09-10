@@ -2,24 +2,25 @@ import React, { useReducer, createContext, useMemo } from 'react';
 
 import Routing from './routes/Routing.component';
 
-export const CountContext = createContext();
+export const StepContext = createContext();
 
-const initialState = 0;
+const initialStep = { step: 0, finished: false };
 const reducer = (state, action) => {
   switch (action) {
-    case 'increment': return state + 1;
-    case 'decrement': return state - 1;
+    case 'increment': return { ...state, step: state.step + 1 };
+    case 'decrement': return { ...state, step: state.step - 1 };
+    case 'finished': return { ...state, finished: !state.finished };
     default: return state;
   }
 };
 
 const App = () => {
-  const [count, dispatch] = useReducer(reducer, initialState);
-  const countValue = useMemo(() => ({ countState: count, countDispatch: dispatch }));
+  const [step, dispatch] = useReducer(reducer, initialStep);
+  const stepValue = useMemo(() => ({ stepState: step, stepDispatch: dispatch }));
   return (
-    <CountContext.Provider value={countValue}>
+    <StepContext.Provider value={stepValue}>
       <Routing />
-    </CountContext.Provider>
+    </StepContext.Provider>
   );
 };
 
