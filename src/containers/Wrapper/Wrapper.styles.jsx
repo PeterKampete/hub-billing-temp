@@ -25,7 +25,7 @@ export const WrapperContainer = styled.div`
   
 `;
 export const Content = styled.div`
-  animation: ${fadeIn} 0.5s linear;
+  animation: ${fadeIn} 0.3s linear;
   width: 100%;
   height: 100%;
   margin-top: 10vh;

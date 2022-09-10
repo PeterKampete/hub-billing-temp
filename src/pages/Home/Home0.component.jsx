@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unstable-nested-components */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import {
   Title, Caption, StartCon, StyledLinkDocs, StyledBtnCon,
@@ -15,18 +15,14 @@ import {
 } from '../../components';
 
 import HomeWrapper from './HomeWrapper';
-import Home2 from './Home1.component';
-import Home3 from './Home2.component';
+import { CountContext } from '../../App';
 
 const Home0 = () => {
+  const countContext = useContext(CountContext);
   // eslint-disable-next-line no-unused-vars
   const [showModal, setShowModal] = useState(false);
   // eslint-disable-next-line no-unused-vars
-  const [isSetup, setIsSetup] = useState(true);
-
-  const [steps, setSteps] = useState(1);
-
-  const stepsArr = [1, 2, 3];
+  const [isSetup, setIsSetup] = useState(false);
 
   // useEffect(() => {
   //   if (!isSetup) {
@@ -35,12 +31,10 @@ const Home0 = () => {
   //     }, 2000);
   //   }
   // }, [isSetup]);
+  const handleNext = () => {
+    countContext.countDispatch('increment');
+  };
 
-  if (steps === stepsArr[1]) {
-    return <Home2 steps={steps} />;
-  } if (steps === stepsArr[2]) {
-    return <Home3 />;
-  }
   return (
     <Wrapper>
       {showModal && (
@@ -50,10 +44,10 @@ const Home0 = () => {
         caption="Pay 0% transaction fee and get added benefits by upgrading your account."
       />
       )}
-      <div style={{ marginTop: showModal || isSetup ? '2px' : '28px' }}>
+      <div style={{ marginTop: showModal || isSetup ? '0px' : '28px' }}>
         <HomeWrapper
-          heading={() => <StepsContainer title="Getting Started" steps={steps} />}
-          style={{ paddingBottom: showModal || isSetup ? '1%' : '5px' }}
+          heading={() => <StepsContainer title="Getting Started" />}
+          style={{ paddingBottom: showModal || isSetup ? '1%' : '1.7%' }}
         >
           <WordMark />
           <Title>Connect Stripe Account</Title>
@@ -90,7 +84,7 @@ const Home0 = () => {
                   title="Get Started"
                   width={55}
                   margin="12"
-                  onClickFunc={() => setSteps(steps + 1)}
+                  onClickFunc={handleNext}
                 />
                 <StyledLinkDocs
                   title="Find out more about Client Billing"

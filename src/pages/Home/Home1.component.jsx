@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
 
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext, useState } from 'react';
 import { BackIcon } from '../../assets/svg/SvgIcons';
 import {
   CheckboxText, Dropdown, Note, StepsContainer,
@@ -11,8 +10,9 @@ import {
   StyledTitle, StyledCaption, StyledBtn, StyledBtnChk, BackBtn,
 } from './Home.styles';
 import HomeWrapper from './HomeWrapper';
+import { CountContext } from '../../App';
 
-const Home1 = ({ steps }) => {
+const Home1 = () => {
   const options = [
     'USD - United States Dollars',
     'EUR - European Euro',
@@ -21,6 +21,15 @@ const Home1 = ({ steps }) => {
   ];
 
   const [check, setCheck] = useState(false);
+
+  const countContext = useContext(CountContext);
+
+  const handleNext = () => {
+    countContext.countDispatch('increment');
+  };
+  const handleBack = () => {
+    countContext.countDispatch('decrement');
+  };
 
   return (
     <Wrapper>
@@ -31,7 +40,7 @@ const Home1 = ({ steps }) => {
             margin="0"
             width="11"
             renderIcon={() => <div style={{ marginRight: '4px' }}><BackIcon /></div>}
-            onClickFunc={() => steps - 1}
+            onClickFunc={handleBack}
           />
           <StyledTitle>Choose Billing Currency</StyledTitle>
           <StyledCaption>Select the currency you want to use to bill your clients.</StyledCaption>
@@ -47,7 +56,7 @@ const Home1 = ({ steps }) => {
             checked={check}
           />
           {check ? (
-            <StyledBtnChk title="Finish Setup" width="16" onClickFunc={() => steps - 1} />
+            <StyledBtnChk title="Finish Setup" width="16" onClickFunc={handleNext} />
           ) : (
             <StyledBtn title="Finish Setup" width="16" />
           )}
@@ -55,13 +64,6 @@ const Home1 = ({ steps }) => {
       </div>
     </Wrapper>
   );
-};
-
-Home1.defaultProps = {
-  steps: '',
-};
-Home1.propTypes = {
-  steps: PropTypes.number,
 };
 
 export default Home1;

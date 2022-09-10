@@ -14,9 +14,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-evenly;
   position: relative;
-  left: -2px;
+  left: -3px;
   margin: 8px;
-  padding: 2px;
   height: 10%;
   top: -6%;
   
@@ -45,6 +44,7 @@ export const Caption = styled.h6`
   color: #555555;
   margin: 0px;
   font-size: 10px;
+  margin-top: 3px;
   @media screen and (min-width: 50em){
   font-size: 10px;
   margin-top: 2px;
