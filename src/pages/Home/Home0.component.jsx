@@ -33,8 +33,8 @@ const Home0 = () => {
     stepDispatch('increment');
   };
   const handleStart = () => {
-    setIsConnected(true);
     setShowModal(false);
+    setIsConnected(true);
   };
 
   return (
@@ -49,7 +49,7 @@ const Home0 = () => {
       <div style={{ marginTop: showModal || isConnected ? '0px' : '28px' }}>
         <HomeWrapper
           heading={() => <StepsContainer title="Getting Started" />}
-          style={{ paddingBottom: showModal || isConnected ? '1%' : '1.7%' }}
+          style={{ paddingBottom: showModal ? '0.4rem' : '1.7%' }}
         >
           <WordMark />
           <Title>Connect Stripe Account</Title>
