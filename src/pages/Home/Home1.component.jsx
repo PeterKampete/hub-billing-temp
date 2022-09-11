@@ -26,10 +26,6 @@ const Home1 = () => {
 
   const handleNext = () => {
     stepContext.stepDispatch('increment');
-    setTimeout(() => {
-      stepContext.stepDispatch('finished');
-      console.log('dispatched finish');
-    }, 2000);
   };
   const handleBack = () => {
     stepContext.stepDispatch('decrement');

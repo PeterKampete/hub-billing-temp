@@ -4,6 +4,7 @@ import Routing from './routes/Routing.component';
 
 export const StepContext = createContext();
 
+const steps = [1, 2];
 const initialStep = { step: 0, finished: false };
 const reducer = (state, action) => {
   switch (action) {
@@ -16,7 +17,7 @@ const reducer = (state, action) => {
 
 const App = () => {
   const [step, dispatch] = useReducer(reducer, initialStep);
-  const stepValue = useMemo(() => ({ stepState: step, stepDispatch: dispatch }));
+  const stepValue = useMemo(() => ({ stepState: step, stepDispatch: dispatch, steps }));
   return (
     <StepContext.Provider value={stepValue}>
       <Routing />

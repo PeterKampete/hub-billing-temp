@@ -1,22 +1,48 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { Container, Steps, Title } from './StepsContainer.styles';
+import {
+  Container, Step, Steps, Title,
+} from './StepsContainer.styles';
+import { StepContext } from '../../App';
 
 const StepsContainer = ({
-  steps, title, color, fontSize, ...props
-}) => (
-  <Container {...props}>
-    <div>
-      <Title fontSize={fontSize} color={color}>
-        {title}
-      </Title>
-    </div>
-    <div>
-      <Steps>{steps}</Steps>
-    </div>
-  </Container>
-);
+  title, color, fontSize, ...props
+}) => {
+  const stepContext = useContext(StepContext);
+  const { steps, stepState } = stepContext;
+  const [stepIndex, setStepIndex] = useState(false);
+  useEffect(() => {
+    if (stepState.step === 1) {
+      setStepIndex(true);
+    }
+  }, [stepState.step, steps]);
+
+  return (
+    <Container {...props}>
+      <div>
+        <Title fontSize={fontSize} color={color}>
+          {title}
+        </Title>
+      </div>
+      <div>
+        <Steps>
+          Step
+          {' '}
+          {stepIndex ? steps[1] : steps[0]}
+          {' '}
+          of
+          {' '}
+          {stepIndex ? steps[1] : steps[0]}
+          <div style={{ display: 'flex', marginLeft: '6px' }}>
+            <Step active={steps[0] === stepState.step + 1} />
+            <Step active={steps[1] === stepState.step + 1} />
+          </div>
+        </Steps>
+      </div>
+    </Container>
+  );
+};
 
 StepsContainer.defaultProps = {
   title: '',

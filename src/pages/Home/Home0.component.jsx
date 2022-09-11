@@ -19,20 +19,22 @@ import { StepContext } from '../../App';
 
 const Home0 = () => {
   const stepContext = useContext(StepContext);
+  const { stepDispatch } = stepContext;
+  const [isConnected, setIsConnected] = useState(false);
   // eslint-disable-next-line no-unused-vars
   const [showModal, setShowModal] = useState(false);
   // eslint-disable-next-line no-unused-vars
   useEffect(() => {
-    if (stepContext.stepState.finished) {
-      setShowModal(false);
-    } else {
-      setTimeout(() => {
-        setShowModal(true);
-      }, 2000);
-    }
+    setTimeout(() => {
+      setShowModal(true);
+    }, 1500);
   }, []);
   const handleNext = () => {
-    stepContext.stepDispatch('increment');
+    stepDispatch('increment');
+  };
+  const handleStart = () => {
+    setIsConnected(true);
+    setShowModal(false);
   };
 
   return (
@@ -44,14 +46,14 @@ const Home0 = () => {
         caption="Pay 0% transaction fee and get added benefits by upgrading your account."
       />
       )}
-      <div style={{ marginTop: showModal || stepContext.stepState.finished ? '0px' : '28px' }}>
+      <div style={{ marginTop: showModal || isConnected ? '0px' : '28px' }}>
         <HomeWrapper
           heading={() => <StepsContainer title="Getting Started" />}
-          style={{ paddingBottom: showModal || stepContext.stepState.finished ? '1%' : '1.7%' }}
+          style={{ paddingBottom: showModal || isConnected ? '1%' : '1.7%' }}
         >
           <WordMark />
           <Title>Connect Stripe Account</Title>
-          {stepContext.stepState.finished ? (
+          {isConnected ? (
             <Connection
               name="{name} Stripe Account"
               email="{email}"
@@ -74,9 +76,9 @@ const Home0 = () => {
             </>
           )}
           <div>
-            {stepContext.stepState.finished ? (
+            {isConnected ? (
               <div>
-                <StyledBtnCon title="Continue" width={100} />
+                <StyledBtnCon title="Continue" width={100} onClick={handleNext} />
               </div>
             ) : (
               <StartCon>
@@ -84,7 +86,7 @@ const Home0 = () => {
                   title="Get Started"
                   width={55}
                   margin="12"
-                  onClickFunc={handleNext}
+                  onClickFunc={handleStart}
                 />
                 <StyledLinkDocs
                   title="Find out more about Client Billing"
