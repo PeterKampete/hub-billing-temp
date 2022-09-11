@@ -9,6 +9,7 @@ export const Container = styled.div`
   position: relative;
   top: -1.5em;
   padding: 2%;
+  font-size: ${({ capFontSize }) => (typeof capFontSize === 'string' ? capFontSize : `${capFontSize}%`)};
   &p {
     margin: 0px;
   };
@@ -18,21 +19,16 @@ export const Container = styled.div`
   position: static;
   height: auto;
   }
-
 `;
 export const Title = styled.span`
   color: ${({ color }) => color};
   font-weight: bold;
-  font-size: 100%;
-  @media screen and (min-width: 50em){
-  font-size: ${({ fontSize }) => (typeof fontSize === 'string' ? fontSize : `${fontSize}%`)};
-  }
 `;
 export const Caption = styled.span`
   color: ${({ capColor }) => capColor};
-  font-size: 65%;
+  font-size: ${({ capFontSize }) => (typeof capFontSize === 'string' ? capFontSize : `${capFontSize}%`)};
   @media screen and (min-width: 50em){
-  font-size: ${({ fontSize }) => (typeof fontSize === 'string' ? fontSize : `${fontSize}%`)};
+  font-size: ${({ capFontSize }) => (typeof capFontSize === 'string' ? capFontSize : `${capFontSize}%`)};
   }
 `;
 export const Line = styled.div`

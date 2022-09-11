@@ -28,8 +28,8 @@ PageHeader.defaultProps = {
   caption: '',
   color: 'var(--color-secondary)',
   capColor: '#888888',
-  fontSize: 100,
-  capFontSize: 80,
+  fontSize: 'var(--font-16)',
+  capFontSize: 'var(--font-12)',
 };
 
 PageHeader.propTypes = {

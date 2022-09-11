@@ -4,6 +4,7 @@ export const Container = styled.button`
   width: 100%;
   display: flex;
   background-color: transparent;
+  font-size: ${({ fontSize }) => (typeof fontSize === 'string' ? fontSize : `${fontSize}%`)};
   border: none;
   align-items: center;
   justify-content: center;
@@ -13,7 +14,6 @@ export const Container = styled.button`
 export const Title = styled.span`
   margin-right: 6px;
   color: ${({ color }) => color};
-  font-size: ${({ fontSize }) => (typeof fontSize === 'string' ? fontSize : `${fontSize}%`)};
   font-weight: 800;
   letter-spacing: 0.02px
 `;
