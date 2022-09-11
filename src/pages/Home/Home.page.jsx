@@ -6,11 +6,12 @@ import Home2 from './Home2.component';
 
 const Home = () => {
   const stepContext = useContext(StepContext);
-  if (stepContext.stepState.step === 0 || stepContext.stepState.finished) {
+  const { stepState } = stepContext;
+  if (stepState.step === 0 || stepState.finished) {
     return <Home0 />;
-  } if (stepContext.stepState.step === 1) {
+  } if (stepState.step === 1) {
     return <Home1 />;
-  } if (stepContext.stepState.step === 2) {
+  } if (stepState.step === 2) {
     return <Home2 />;
   }
   return 'Welcome User';
